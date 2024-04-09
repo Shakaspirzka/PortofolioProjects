@@ -4,7 +4,7 @@ Select *
 From PortofolioProject.dbo.NashvilleHousing 
 
 
--- Standardize Date Format
+-- Standardize Date Format - use ALTER not Update because Update doesnt allow for data tyoe changing
 
  Select SaleDate, CONVERT(Date,SaleDate)
 From PortofolioProject.dbo.NashvilleHousing 
@@ -17,7 +17,8 @@ Add SaleDateConverted Date;
 
 Update NashvilleHousing
 SET SaleDateConverted = CONVERT(Date,SaleDate)
-
+-- ALTER TABLE NashvilleHouseing
+-- ALTER COLUMN SaleDate DATE
 
 -- Population Property Address data , fill out responses where possible ( entries with the same ParcelID should share the same adress) using the ISNULL com
 
